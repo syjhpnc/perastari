@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페라스타 아이안심(Perasta) 상세페이지</title>
+</head>
+<body style="margin:0;padding:0;background:#fff;">
+
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+.prs-wrap{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;font-family:'Pretendard',-apple-system,sans-serif;color:#2d3436;font-size:14px;line-height:1.7;}
+.prs-header{text-align:center;padding:44px 50px 40px;border-bottom:1px solid #e9ecef;}
+.prs-logo{height:52px;width:auto;margin-bottom:28px;}
+.prs-badge{display:inline-block;background:#e7f3f1;color:#268B7C;padding:7px 20px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:22px;}
+.prs-copy{font-size:20px;font-weight:400;color:#444;word-break:keep-all;margin-bottom:18px;line-height:1.8;}
+.prs-copy strong{color:#268B7C;font-weight:800;}
+.prs-pkg{font-size:13px;color:#636e72;background:#f5f7f6;padding:9px 18px;border-radius:8px;display:inline-block;}
+.prs-sec{padding:36px 50px;border-bottom:1px solid #e9ecef;}
+.prs-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.prs-num{background:#268B7C;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:800;}
+.prs-title{font-size:20px;font-weight:800;margin:0;color:#2d3436;}
+.prs-fg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.prs-fc{border:1px solid #e9ecef;border-radius:12px;padding:18px 16px;font-size:13.5px;line-height:1.6;display:flex;align-items:flex-start;gap:8px;}
+.prs-fc::before{content:"•";color:#268B7C;font-weight:900;flex-shrink:0;}
+.prs-sbox{background:#f5f7f6;border-radius:12px;padding:24px 28px;font-size:14px;color:#636e72;line-height:1.8;word-break:keep-all;}
+.prs-sbox p{margin:0 0 6px;}
+.prs-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.prs-tag{background:#fff;border:1px solid #268B7C;color:#268B7C;border-radius:20px;padding:4px 14px;font-size:12.5px;font-weight:700;}
+.prs-dbox{background:#f5f7f6;border-radius:12px;padding:24px 28px;font-size:14px;color:#636e72;line-height:1.8;word-break:keep-all;}
+.prs-dbox p{margin:0 0 6px;}
+.prs-flow{display:flex;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap;row-gap:10px;}
+.prs-ditem{background:#fff;border:1px solid #e9ecef;border-radius:8px;padding:10px 18px;font-size:13.5px;font-weight:700;color:#2d3436;}
+.prs-darr{color:#268B7C;font-size:18px;font-weight:800;}
+.prs-dres{background:#e7f3f1;border:1px solid #268B7C;border-radius:8px;padding:10px 18px;font-size:13px;color:#268B7C;font-weight:700;}
+.prs-dbrk{flex-basis:100%;height:0;}
+.prs-ug{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.prs-ui{background:#f5f7f6;border-radius:14px;padding:24px 14px;text-align:center;border-bottom:3px solid #268B7C;font-weight:700;color:#268B7C;font-size:14px;line-height:1.6;}
+.prs-sh{font-size:15px;font-weight:700;color:#2d3436;margin:28px 0 14px;display:flex;align-items:center;gap:8px;}
+.prs-sh::before{content:"";width:4px;height:16px;background:#268B7C;border-radius:2px;display:inline-block;}
+.prs-wrap table{width:100%;border-collapse:collapse;font-size:13.5px;text-align:center;border-top:2px solid #2d3436;}
+.prs-wrap th{background:#f1f5f4;padding:13px 10px;font-weight:700;border-bottom:1px solid #e9ecef;font-size:13px;}
+.prs-wrap td{padding:13px 10px;border-bottom:1px solid #e9ecef;color:#636e72;}
+.prs-wrap td.rh{font-weight:700;color:#2d3436;background:#fafafa;}
+.prs-dg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.prs-bdl{display:block;text-align:center;padding:16px;border:1.5px solid #268B7C;border-radius:10px;color:#268B7C;font-weight:700;font-size:13.5px;text-decoration:none;}
+.prs-csec{padding:36px 50px;border-bottom:1px solid #e9ecef;}
+.prs-cin{text-align:center;padding:40px;border:1.5px solid #e9ecef;border-radius:16px;}
+.prs-cin p{color:#636e72;margin:0 0 24px;font-size:14px;}
+.prs-bc{display:inline-block;background:#268B7C;color:#fff;font-size:16px;font-weight:700;padding:18px 56px;border-radius:12px;text-decoration:none;}
+.prs-calcsec{padding:36px 50px;}
+
+@media(max-width:768px){
+  .prs-header{padding:44px 20px;}
+  .prs-sec,.prs-csec,.prs-calcsec{padding:36px 20px;}
+  .prs-fg{grid-template-columns:repeat(2,1fr);}
+  .prs-ug{grid-template-columns:repeat(2,1fr);}
+  .prs-dg{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+  .prs-wrap{border-radius:0;}
+  .prs-header{padding:32px 16px;}
+  .prs-sec,.prs-csec,.prs-calcsec{padding:28px 16px;}
+  .prs-copy{font-size:16px;}
+  .prs-title{font-size:17px;}
+  .prs-fg{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .prs-fc{font-size:12.5px;padding:14px 12px;}
+  .prs-ug{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .prs-ui{font-size:13px;padding:18px 10px;}
+  .prs-dg{grid-template-columns:repeat(2,1fr);}
+  .prs-flow{gap:6px;}
+  .prs-ditem{font-size:12px;padding:8px 12px;}
+  .prs-darr{font-size:14px;}
+  .prs-dres{font-size:12px;padding:8px 12px;}
+  .prs-tag{font-size:12px;padding:4px 10px;}
+  .prs-wrap table{font-size:12px;}
+  .prs-wrap th,.prs-wrap td{padding:10px 8px;}
+  .prs-cin{padding:20px 16px;}
+  .prs-bc{font-size:14px;padding:14px 28px;}
+}
+</style>
+
+<div class="prs-wrap">
+
+    <!-- HEADER -->
+    <div class="prs-header">
+        <img src="https://ik.imagekit.io/syjhpnc/%ED%8E%98%EB%9D%BC%EC%8A%A4%ED%83%80%20%EC%95%84%EC%9D%B4%EC%95%88%EC%8B%AC.PNG?updatedAt=1774935502482" alt="페라스타 아이안심 로고" class="prs-logo"><br>
+        <span class="prs-badge">과산화초산 6% / 식품살균제 / HEDP 無첨가</span>
+        <p class="prs-copy">
+            <strong>페라스타 아이안심</strong>은 과산화초산 농도 6%의 식품용 살균제로,<br>
+            과일과 야채의 살균·소독에 최적화된 <strong>맞춤형 살균제입니다.</strong>
+        </p>
+        <div class="prs-pkg"><strong>포장단위</strong> &nbsp;|&nbsp; 1L · 5L · 20L · 1,000L</div>
+    </div>
+
+    <!-- 01 주요 특징 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">01</span><h2 class="prs-title">주요 특징</h2></div>
+        <div class="prs-fg">
+            <div class="prs-fc">광범위한 살균 스펙트럼</div>
+            <div class="prs-fc">HEDP 無첨가</div>
+            <div class="prs-fc">단시간에 강력한 살균 효과 발휘</div>
+            <div class="prs-fc">환경 영향(유기물, 온도)이 적음</div>
+            <div class="prs-fc">소독 부산물 및 거품 발생 없음</div>
+            <div class="prs-fc">사용 후 필수 제거 공정 미요구</div>
+            <div class="prs-fc">KGMP 인증 시설에서 생산</div>
+            <div class="prs-fc">바이오필름 제거에 효과적</div>
+        </div>
+    </div>
+
+    <!-- 02 살균 스펙트럼 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">02</span><h2 class="prs-title">광범위한 살균 스펙트럼</h2></div>
+        <div class="prs-sbox">
+            <p>페라스타(과산화초산)는 특정 균에 국한되지 않는 광범위 살균제입니다.</p>
+            <p>특히 일반적인 살균제로 제거하기 어려운 포자에도 신속하고 효과적인 살균력을 발휘합니다.</p>
+            <div class="prs-tags">
+                <span class="prs-tag">세균</span>
+                <span class="prs-tag">바이러스</span>
+                <span class="prs-tag">진균(곰팡이)</span>
+                <span class="prs-tag">아포균(내성 포자)</span>
+                <span class="prs-tag">바이오필름</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 03 분해 특성 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">03</span><h2 class="prs-title">분해 특성</h2></div>
+        <div class="prs-dbox">
+            <p>페라스타(과산화초산)는 사용(살균 작용) 후 자연적으로 물, 산소, 아세트산으로 분해됩니다.</p>
+            <p>이러한 분해 특성으로 유해한 소독 부산물이 생성되지 않는 친환경 살균제로 평가됩니다.</p>
+            <div class="prs-flow">
+                <div class="prs-ditem">페라스타(과산화초산)</div>
+                <div class="prs-darr">→</div>
+                <div class="prs-ditem">물 (H₂O)</div>
+                <div class="prs-darr">+</div>
+                <div class="prs-ditem">산소 (O₂)</div>
+                <div class="prs-darr">+</div>
+                <div class="prs-ditem">아세트산 (CH₃COOH)</div>
+                <div class="prs-dbrk"></div>
+                <div class="prs-darr">→</div>
+                <div class="prs-dres">유해 잔류물 없음</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 주요 용도 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">04</span><h2 class="prs-title">주요 용도</h2></div>
+        <div class="prs-ug">
+            <div class="prs-ui">과일·야채<br>살균세척</div>
+            </div>
+    </div>
+
+    <!-- 05 사용 방법 및 희석 비율 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">05</span><h2 class="prs-title">사용 방법 및 희석 비율</h2></div>
+
+        <div class="prs-sh">식품용 살균제</div>
+        <div style="overflow-x:auto;margin-bottom:28px;">
+            <table>
+                <thead>
+                    <tr><th>구분</th><th>과일·야채</tr>
+                </thead>
+                <tbody>
+                    <tr><td class="rh">희석 비율</td><td>1,200배 이상</td></tr>
+                    <tr><td class="rh">과산화초산 농도</td><td>50 ppm 이하</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+       
+    </div>
+
+    <!-- 06 관련자료 다운로드 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">06</span><h2 class="prs-title">관련자료 다운로드</h2></div>
+        <div class="prs-dg">
+            <a href="#" class="prs-bdl">품목제조보고서</a>
+            <a href="#" class="prs-bdl">자가품질성적서</a>
+            <a href="https://syjhpnc.github.io/SDS/페라스타 아이안심 SDS_v1.pdf" class="prs-bdl"download target="_blank">SDS</a>
+           </div>
+    </div>
+
+    <!-- 07 전문 상담 및 견적 문의 -->
+    <div class="prs-csec">
+        <div class="prs-head"><span class="prs-num">07</span><h2 class="prs-title">전문 상담 및 견적 문의</h2></div>
+        <div class="prs-cin">
+            <p>대량 구매 및 도입 관련 상세 견적을 안내해 드립니다.</p>
+            <a href="http://perastar.webmind.kr/common/contact/write.php" target="_blank" class="prs-bc">실시간 견적 문의하기</a>
+        </div>
+    </div>
+
+    <!-- 08 희석 계산기 -->
+    <div class="prs-calcsec">
+        <div class="prs-head"><span class="prs-num">08</span><h2 class="prs-title">희석 계산기</h2></div>
+        <iframe src="https://syjhpnc.github.io/perastar/페라스타 아이안심 계산기.html" title="페라스타 희석계산기" scrolling="no"
+                style="width:100%;height:500px;border:none;border-radius:12px;background:#f5f7f6;"></iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
